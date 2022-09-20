@@ -1,7 +1,7 @@
 # MongoIntro
 
 ## Adding blogs and updating data types:
-
+- Defining all blogs and data types
 const blog2 = {
 	 "createdAt": new Date("2022-08-23T11:58:31.513Z"),
 	 "title": "esse",
@@ -23,6 +23,7 @@ const blog3 = {
 	 "id": "7e2361f5-7648-4532-94fa-366ed86cf147",
 	 "objectId": 3
 	}
+
 const blog4 = {
 	 "createdAt": new Date("2022-07-28T02:46:19.103Z"),
 	 "title": "optio",
@@ -33,6 +34,7 @@ const blog4 = {
 	 "id": "d8d67722-ad63-4700-9654-cebdf19009e0",
 	 "objectId": 4
 	}
+
 const blog5 = {
 	 "createdAt": new Date("2021-10-02T08:46:06.390Z"),
 	 "title": "id",
@@ -43,6 +45,7 @@ const blog5 = {
 	 "id": "01ac5582-4c44-45f3-b3c1-f35db0edc29e",
 	 "objectId": 5
 	}
+
 const blog6 = {
 	 "createdAt": new Date("2022-01-27T07:59:32.530Z"),
 	 "title": "ipsum",
@@ -53,6 +56,7 @@ const blog6 = {
 	 "id": "a2c15b3c-f687-4ee8-9a04-24fb30b8f1e1",
 	 "objectId": 6
 	}
+
 const blog7 = {
 	 "createdAt": new Date("2022-02-02T20:23:59.817Z"),
 	 "title": "animi",
@@ -63,6 +67,7 @@ const blog7 = {
 	 "id": "976604e5-b10f-47fb-9191-dcb23df24277",
 	 "objectId": 7
 	}
+
 const blog8 = {
 	 "createdAt": new Date("2021-10-19T19:12:00.530Z"),
 	 "title": "accusamus",
@@ -73,6 +78,7 @@ const blog8 = {
 	 "id": "e39a30b5-4507-4d6f-b9cf-72e4c7d3c779",
 	 "objectId": 8
 	}
+
 const blog9 = {
 	 "createdAt": new Date("2022-09-09T12:56:17.262Z"),
 	 "title": "delectus",
@@ -82,6 +88,7 @@ const blog9 = {
 	 "id": "01ed79b1-75c2-44e5-becb-10788158a7db",
 	 "objectId": 9
 	}
+
 const blog10 = {
 	 "createdAt": new Date("2022-01-14T15:07:41.214Z"),
 	 "title": "aliquam",
