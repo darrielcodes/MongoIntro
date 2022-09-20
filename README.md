@@ -2,6 +2,7 @@
 
 ## Adding blogs and updating data types:
 - Defining all blogs and data types
+
 const blog2 = {
 	 "createdAt": new Date("2022-08-23T11:58:31.513Z"),
 	 "title": "esse",
