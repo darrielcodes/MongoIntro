@@ -1,7 +1,9 @@
 # MongoIntro
 
 ## Adding blogs and updating data types:
+
 - Defining all blogs and data types
+
 const blog2 = {
 	 "createdAt": new Date("2022-08-23T11:58:31.513Z"),
 	 "title": "esse",
@@ -213,9 +215,9 @@ db.blogs.find({
 
  - Find all blogs that have "qui" in the categories array
 
- db.blogs.find({
+db.blogs.find({
     categories: {
-        $regex: /qui/
+        $in: ["qui"]
     }
 })
   .projection({})
