@@ -103,6 +103,8 @@ const blog10 = {
 
 ## Queries:
 
+## Part 1:
+
 - Inserting first blog with updated data types: 
 
 db.blogs.insertOne({
@@ -139,9 +141,6 @@ db.blogs.insertMany(allBlogs);
 db.blogs.find({
     author: "Darriel Morris"
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
 
 - Find all blogs who's objectID is greater than 5:
 
@@ -150,20 +149,16 @@ db.blogs.find({
         $gt: 5
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
 
 - Find all blogs who's createdAt is after April 1, 2022:
 
 db.blogs.find({
     createdAt: {
-        $gt: new Date(2022-04-01)
+        $gt: new Date("2022-04-01")
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
+
+## Part 2:
 
 - Find all blogs where the field lastModified does not exist
 db.blogs.find({
@@ -171,9 +166,6 @@ db.blogs.find({
         $exists: false
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
 
 - Find all blogs where the createdAt type is a date
 
@@ -182,9 +174,6 @@ db.blogs.find({
         $type: "date"
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
 
   - Combine the above two queries into one to find all blogs in which lastModified does not exist and createdAt is the type date
 
@@ -196,9 +185,7 @@ db.blogs.find({
         $type: "date"
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
+
 
  _Stretch Goals_
  
@@ -209,9 +196,6 @@ db.blogs.find({
         $regex: /qui/
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
 
  - Find all blogs that have "qui" in the categories array
 
@@ -220,6 +204,53 @@ db.blogs.find({
         $in: ["qui"]
     }
 })
-  .projection({})
-  .sort({_id:-1})
-  .limit(100)
+
+## Part 3:
+
+- Find all blogs in which the lastModified does not exist and set it
+db.blogs.updateMany({
+    lastModified: {
+        $exists: false
+    }
+},{
+    $set:{
+        lastModified: new Date()
+    }});
+
+* From now on, all the following queries should update lastModified to be the current datetime 
+
+- Find all blogs created after May 2022 and add "lorem" as a new category in the categories array
+
+    db.blogs.updateMany({
+    createdAt:{
+    $gt: new Date("2022-05")
+    }
+},{
+    $set:{
+        lastModified: new Date()
+    },
+        $push: {
+        categories: "lorem"
+        }
+    });
+
+- Find all blogs that have the category "voluptas" and pull "voluptas" from the categories
+
+db.blogs.updateMany({
+    categories:{
+    $in: ["voluptas"]
+    }
+},{
+    $set:{
+        lastModified: new Date()
+    },
+        $pull: {
+        categories: "voluptas"
+        }
+    });
+
+- Find all blogs with "corrupti" in the categories and delete those blogs
+
+db.blogs.deleteMany({
+    categories: "corrupti"
+});
