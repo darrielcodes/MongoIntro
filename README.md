@@ -161,6 +161,7 @@ db.blogs.find({
 ## Part 2:
 
 - Find all blogs where the field lastModified does not exist
+
 db.blogs.find({
     lastModified: {
         $exists: false
@@ -208,6 +209,7 @@ db.blogs.find({
 ## Part 3:
 
 - Find all blogs in which the lastModified does not exist and set it
+
 db.blogs.updateMany({
     lastModified: {
         $exists: false
@@ -217,7 +219,7 @@ db.blogs.updateMany({
         lastModified: new Date()
     }});
 
-* From now on, all the following queries should update lastModified to be the current datetime 
+_From now on, all the following queries should update lastModified to be the current datetime_
 
 - Find all blogs created after May 2022 and add "lorem" as a new category in the categories array
 
